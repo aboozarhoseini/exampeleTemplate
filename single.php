@@ -13,23 +13,3 @@ echo $current_id;
 
 
 echo "<br>";
-<<<<<<< Updated upstream
-echo get_the_post_thumbnail($current_id,'main-thumbnials');
-
-
-=======
-foreach (get_the_category() as $item) {
-    echo $item->term_id;
-
-}
-
-
-echo "<br>";
-echo get_the_post_thumbnail($current_id,'main-thumbnials');
-?>
->>>>>>> Stashed changes
-
-
-
-
-
