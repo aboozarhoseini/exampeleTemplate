@@ -1,5 +1,5 @@
 <?php
-//get_header();
+get_header();
 get_template_part('partials/top-menu');
 get_template_part('partials/main_titr');
 get_template_part('partials/main_slider');
@@ -12,4 +12,4 @@ get_template_part('partials/blog');
 get_template_part('partials/subscribe');
 get_template_part('partials/pricing');
 get_template_part('partials/footer_content');
-//get_footer();
+get_footer();

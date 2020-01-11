@@ -7,49 +7,14 @@
               </div>
           </div>
           <div class="row">
-<!--              <div class="col-md-3 text-center animate-box">-->
-<!--                  <div class="pricing">-->
-<!--                      <h2 class="pricing-heading">Starter</h2>-->
-<!--                      <div class="price"><sup class="currency">$</sup>9-->
-<!--                          <small>per month</small>-->
-<!--                      </div>-->
-<!--                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
-<!--                      <p><a href="#" class="btn btn-primary">Select Plan</a></p>-->
-<!--                  </div>-->
-<!--              </div>-->
-<!--              <div class="col-md-3 text-center animate-box">-->
-<!--                  <div class="pricing">-->
-<!--                      <h2 class="pricing-heading">Basic</h2>-->
-<!--                      <div class="price"><sup class="currency">$</sup>27-->
-<!--                          <small>per month</small>-->
-<!--                      </div>-->
-<!--                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
-<!--                      <p><a href="#" class="btn btn-primary">Select Plan</a></p>-->
-<!--                  </div>-->
-<!--              </div>-->
-<!--              <div class="col-md-3 text-center animate-box">-->
-<!--                  <div class="pricing">-->
-<!--                      <h2 class="pricing-heading">Pro</h2>-->
-<!--                      <div class="price"><sup class="currency">$</sup>74-->
-<!--                          <small>per month</small>-->
-<!--                      </div>-->
-<!--                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
-<!--                      <p><a href="#" class="btn btn-primary">Select Plan</a></p>-->
-<!--                  </div>-->
-<!--              </div>-->
-<!--              <div class="col-md-3 text-center animate-box">-->
-<!--                  <div class="pricing">-->
-<!--                      <h2 class="pricing-heading">Unlimited</h2>-->
-<!--                      <div class="price"><sup class="currency">$</sup>140-->
-<!--                          <small>per month</small>-->
-<!--                      </div>-->
-<!--                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>-->
-<!--                      <p><a href="#" class="btn btn-primary">Select Plan</a></p>-->
-<!--                  </div>-->
-<!--              </div>-->
 
 
-              <?php include_once get_template_directory().'/loop/price-loop.php'?>
+              <!-- with get_template_directory-->
+<!--              --><?php //include_once get_template_directory().'/loop/price-loop.php'?>
+
+
+              <!-- with get_template_directory-->
+              <?php get_template_part('loop/price','loop')?>
 
           </div>
       </div>

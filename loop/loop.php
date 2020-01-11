@@ -20,7 +20,7 @@ if ($the_array->have_posts())
             <div class="col-md-4 animate-box">
                 <article>
                     <h3><?php echo get_the_title() ?></h3>
-                    <p class="admin"><span><?php echo get_the_date() ?></span></p>
+                    <p class="admin"><span><?php echo get_the_date('Y/m/d l') ; ?> </span></p>
                     <p><?php the_excerpt(); ?></p>
                     <p class="author-wrap">
                     <p><?php echo get_avatar(get_the_author_meta('ID'), 32) ?></p>

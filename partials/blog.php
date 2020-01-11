@@ -7,8 +7,23 @@
             </div>
         </div>
         <div class="row">
-<!--            --><?php //include_once get_template_directory() . '/loop/loop.php' ?>
-            <?php include_once get_template_directory() . '/loop/test-loop.php' ?>
+            <!--use get_template_directory()-->
+            <!-------------------------------->
+            <!--            --><?php //include_once get_template_directory() . '/loop/loop.php' ?>
+
+
+            <!--use get_template_part()-->
+            <!-------------------------------->
+            <?php get_template_part('loop/loop'); ?>
+
+
+
+
+
+            <!--use get_template_part()-->
+            <!-------------------------------->
+<!--            --><?php //get_template_part('loop/test','loop'); ?>
+            <!--            --><?php //include_once get_template_directory() . '/loop/test-loop.php' ?>
         </div>
     </div>
 </div>
