@@ -35,8 +35,13 @@ function myThemeSetUp()
 
 
 
+
     add_image_size('main-thumbnials', 200, 133);
 //    add_image_size('main-thumbnials', 130, 75); // smaller
+
+    add_image_size('main-thumbnials', 260, 150);
+//    add_image_size('main-thumbnials2', 130, 75); // smaller
+
 }
 
 function add_responsive_slider_assets()
