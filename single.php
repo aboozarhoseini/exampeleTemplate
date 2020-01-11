@@ -18,9 +18,6 @@ echo get_the_post_thumbnail($current_id,'main-thumbnials');
 
 
 
-?>
-
-
 
 
 
