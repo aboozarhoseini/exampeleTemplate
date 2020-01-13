@@ -5,9 +5,12 @@ $args = array(
 
 );
 
+
+
 $array = new WP_Query($args);
 ?>
 <?php if ($array->have_posts()): while ($array->have_posts()): $array->the_post(); ?>
+
 
 
     <div class="col-md-3 text-center animate-box">
@@ -17,6 +20,8 @@ $array = new WP_Query($args);
                 <small>per month</small>
             </div>
             <p><?php the_content() ?></p>
+            <p><i class="fas fa-eye"></i>  &nbsp; <span><?php echo testTheme_get_post_meta($array->post->ID)?></span></p>
+
             <p><a href="<?php the_permalink(); ?>" class="btn btn-primary">Select Plan</a></p>
         </div>
     </div>
