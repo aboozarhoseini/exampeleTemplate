@@ -100,7 +100,17 @@ function testTheme_get_post_meta($id)
 }
 
 
+ // dd functions
 
+if(!function_exists('dd')){
+    function dd($data)
+    {
+        echo "<pre>";
+        var_dump($data);
+        echo "</pre>";
+        exit();
+    }
+}
 
 
 
