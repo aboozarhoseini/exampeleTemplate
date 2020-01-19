@@ -1,11 +1,19 @@
 <?php
-if (!function_exists('dd')) {
-    function dd($string)
-    {
-        var_dump($string);
-        exit();
-    }
+// dd functions
+
+if(!function_exists('dd')){
+   function dd($data)
+   {
+       echo "<pre>";
+       print_r($data);
+       echo "</pre>";
+       exit();
+   }
 }
+
+
+
+
 define('TEST_THEME_NAME', 'turaco');
 
 
@@ -100,17 +108,7 @@ function testTheme_get_post_meta($id)
 }
 
 
- // dd functions
 
-if(!function_exists('dd')){
-    function dd($data)
-    {
-        echo "<pre>";
-        var_dump($data);
-        echo "</pre>";
-        exit();
-    }
-}
 
 
 
