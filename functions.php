@@ -1,17 +1,15 @@
 <?php
 // dd functions
 
-if(!function_exists('dd')){
-   function dd($data)
-   {
-       echo "<pre>";
-       print_r($data);
-       echo "</pre>";
-       exit();
-   }
+if (!function_exists('dd')) {
+    function dd($data)
+    {
+        echo "<pre>";
+        print_r($data);
+        echo "</pre>";
+        exit();
+    }
 }
-
-
 
 
 define('TEST_THEME_NAME', 'turaco');
@@ -73,10 +71,55 @@ function add_responsive_slider_assets()
     wp_enqueue_style('all.min.css');
 
     // scripts
+
     wp_register_script('owl.carousel.min.js', get_template_directory_uri() . '/js/owl.carousel.min.js', array('jquery.min.js'), '2.1.4', true);
-    wp_register_script('jquery.min.js', get_template_directory_uri() . '/js/jquery.min.js', '', '', true);
     wp_enqueue_script('owl.carousel.min.js');
+
+
+    // غیر فعال کردن jquery خود وردپرس با wp_deregister_script()
+//    wp_deregister_script('jquery');
+
+
+    wp_register_script('jquery.min.js', get_template_directory_uri() . '/js/jquery.min.js', '', '', true);
     wp_enqueue_script('jquery.min.js');
+
+
+//    if (!is_admin()) {
+//        wp_register_script('jquery_google', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', null, '', true);
+//        wp_enqueue_script('jquery_google');
+//
+//    }
+
+
+// ajax
+
+// برای ارسال فایل ajax باید درخواست ها به این فایل ارسال شود
+// http://localhost/wordpress/wp-admin/admin-ajax.php
+//  که خروجی یک عدد 0 میباشد به صورت پیشفرض
+// از آنجا که آدرس دامین عوض میشود ما باید این آدرس را به صورت داینامیک وارد کنیم
+
+
+//    wp_register_script('main-js', get_template_directory_uri() . '/js/main.js', array('jquery.min.js'), '', true);
+//    wp_enqueue_script('main-js');
+
+
+    wp_register_script('main-js', get_template_directory_uri() . '/js/myMain.js', array('jquery.min.js'), false, true);
+    wp_enqueue_script('main-js');
+
+// با استفاده از تابع زیر و انتساب آن به فایل myMain.js میتوان داده های
+    // موجود در آرایه شی مورد نظر را در فایل myMain.js فراخوانی کرد
+
+    // نکته اینکه در این آرایه دیتاهای حساس قرار داده نشود
+    wp_localize_script('main-js', 'obj_ajax',
+        array(
+            'ajaxUrl' => admin_url('admin-ajax.php'),
+            'myDigit' => 2323,
+            'currentUserId' => wp_get_current_user()->ID,
+            'current_user_name' => wp_get_current_user()->data->user_login,
+        )
+    );
+
+
 
 }
 
@@ -84,6 +127,17 @@ add_action('after_setup_theme', 'myThemeSetUp');
 
 add_action('wp_enqueue_scripts', 'add_responsive_slider_assets');
 
+
+// افزودن تابع my_action که در فایل myMain.js در بخش data ست شده است
+add_action('wp_ajax_my_action', 'my_action');
+function my_action()
+{
+//     با متد post که در فایل myMain.js تنظیم شده به مقادیر دست پیدا میکنیم
+    $user_id = ($_POST['user_id']);
+    $user_name = $_POST['user_name'];
+    echo $user_name ;
+    wp_die();
+}
 
 include_once get_template_directory() . '/inc/custom-post-type.php';
 
