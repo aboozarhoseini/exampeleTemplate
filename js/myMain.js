@@ -1,4 +1,3 @@
-
 jQuery(document).ready(function ($) {
 
 
@@ -6,21 +5,31 @@ jQuery(document).ready(function ($) {
         e.preventDefault();
 
 
+        //******************************************************
 
+
+
+        //******************************************************
 
         $.ajax({
             type: "post",
-            dataType: "json",
+            // dataType: "json",
             url: obj_ajax.ajaxUrl,
+
             data: {
                 action: "my_action",
                 user_id: obj_ajax.currentUserId,
-                user_name : obj_ajax.current_user_name
+                user_name : obj_ajax.current_user_name,
+                digit : obj_ajax.myDigit,
+                full_name : obj_ajax.name,
+                birth : 'kangavar'
 
             },
+
             success: function (response) {
 
                 console.log(response);
+                // alert(response);
 
             }
             // , error: function (res) {

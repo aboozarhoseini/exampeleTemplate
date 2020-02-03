@@ -77,6 +77,10 @@ function add_responsive_slider_assets()
 
 
     // غیر فعال کردن jquery خود وردپرس با wp_deregister_script()
+
+    // یکی از کاربردهای این دستور غیر فعال کردن یک فایل از یک قالب است
+    // که نمخواهیم آنرا تغییر داده یا حذف کنیم
+
 //    wp_deregister_script('jquery');
 
 
@@ -91,7 +95,12 @@ function add_responsive_slider_assets()
 //    }
 
 
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
 // ajax
+////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////
+
 
 // برای ارسال فایل ajax باید درخواست ها به این فایل ارسال شود
 // http://localhost/wordpress/wp-admin/admin-ajax.php
@@ -114,11 +123,11 @@ function add_responsive_slider_assets()
         array(
             'ajaxUrl' => admin_url('admin-ajax.php'),
             'myDigit' => 2323,
+            'name' => 'aboozar hoseini',
             'currentUserId' => wp_get_current_user()->ID,
             'current_user_name' => wp_get_current_user()->data->user_login,
         )
     );
-
 
 
 }
@@ -128,16 +137,10 @@ add_action('after_setup_theme', 'myThemeSetUp');
 add_action('wp_enqueue_scripts', 'add_responsive_slider_assets');
 
 
-// افزودن تابع my_action که در فایل myMain.js در بخش data ست شده است
-add_action('wp_ajax_my_action', 'my_action');
-function my_action()
-{
-//     با متد post که در فایل myMain.js تنظیم شده به مقادیر دست پیدا میکنیم
-    $user_id = ($_POST['user_id']);
-    $user_name = $_POST['user_name'];
-    echo $user_name ;
-    wp_die();
-}
+
+
+// کلیه فایلهای مربوط به ایجکس اینجاست
+include_once get_template_directory() . '/inc/ajax.php';
 
 include_once get_template_directory() . '/inc/custom-post-type.php';
 
