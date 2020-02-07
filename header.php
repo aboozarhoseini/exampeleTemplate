@@ -34,6 +34,9 @@
     <!-- Magnific Popup -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/magnific-popup.css' ?>">
 
+    <!-- style -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri() . '/css/test_css.css' ?>">
+
     <!-- Owl Carousel -->
 <!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri() . '/css/owl.carousel.min.css' ?><!--">-->
 <!--    <link rel="stylesheet" href="--><?php //echo get_template_directory_uri() . '/css/owl.theme.default.min.css' ?><!--">-->

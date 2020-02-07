@@ -20,13 +20,17 @@ if ($the_array->have_posts())
             <div class="col-md-4 animate-box">
                 <article>
                     <h3><?php echo get_the_title() ?></h3>
-                    <p class="admin"><span><?php echo get_the_date('Y/m/d l') ; ?> </span></p>
-                    <p><?php the_excerpt(); ?></p>
-                    <p class="author-wrap">
-                    <p><?php echo get_avatar(get_the_author_meta('ID'), 32) ?></p>
-                    <a href="#" class="author"><?php get_the_author() ?></a></p>
-                    <p style="background-color:yellow "><?php the_title_attribute(array('before' => 'Permalink to: ', 'after' => ' ')) ?></p>
-                    <p style="background-color: #0A246A"><?php the_tags() ?></p>
+                    <p class="admin"><span><?php echo get_the_date('Y/m/d l'); ?> </span></p>
+                    <span><?php the_excerpt(); ?></span>
+                    <p class="p-avatar"><?php echo get_avatar(get_the_author_meta('ID'), 32) ?></p>
+                    <a href="#" class="author"><?php echo get_the_author() ?></a>
+
+                    <!--like-->
+                    <a href="#" class="a-like-it"><i class="far fa-heart"></i></a>
+                    <p class="p-like"><?php echo testTheme_get_like_post_meta(get_the_ID()); ?></p>
+
+                    <p class="p-tag" style="background-color:yellow "><?php the_title_attribute(array('before' => 'Permalink to: ', 'after' => ' ')) ?></p>
+                    <p style="background-color: #0A246A"><?php the_tags(); ?></p>
                 </article>
             </div>
         </a>

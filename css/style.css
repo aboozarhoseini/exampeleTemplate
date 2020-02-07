@@ -2044,3 +2044,35 @@ input[type="text"] {
 .aboo-left {
     float: left !important;
 }
+
+article .p-tag {
+    clear: both;
+}
+
+article p.p-avatar {
+    background-color: #e86a6a !important;
+    float: left;
+    margin-right: 24px;
+
+}
+
+article a.author {
+    background-color: #DEF1B8;
+    float: left;
+
+}
+
+article .a-like-it {
+    margin-left: 15px;
+    float: left;
+    color: red !important;
+}
+
+article .p-like {
+    display: inline;
+    margin-left: 10px;
+    float: left;
+}
+
+
+
