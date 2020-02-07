@@ -59,7 +59,7 @@ add_action('wp_ajax_like_action', 'like_action');
 
 function like_action()
 {
-    echo 'ali';
+    echo 1;
     wp_die();
 }
 

@@ -47,10 +47,16 @@ jQuery(document).ready(function ($) {
     // ajax for like
 
 
-    $("article .a-like-it").on('click', function (e) {
+    $("article").on('click', function (e) {
         e.preventDefault();
         $this = $(this);
+        $this_like = $(this).find('.a-like-it');
+        $this_i = $(this).find('i');
+        $pLike = $(this).find('.p-like');
 
+        $this_like.css('backgroundColor','lightBlue');
+        $this_i.css('backgroundColor','pink');
+        $pLike.css('backgroundColor','yellow');
 
         $.ajax({
             url: obj_ajax.ajaxUrl,
@@ -59,7 +65,9 @@ jQuery(document).ready(function ($) {
                 action: "like_action"
             },
             success: function (res) {
-                $('article .p-like').html(res);
+                // $pLike = $(this).find('.p-like');
+                $currentLike = $pLike.html();
+                $pLike.html(Number($currentLike) + Number(res) );
 
             }
 
@@ -67,3 +75,8 @@ jQuery(document).ready(function ($) {
         })
     })
 });
+
+
+
+
+
