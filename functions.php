@@ -126,6 +126,7 @@ function add_responsive_slider_assets()
             'name' => 'aboozar hoseini',
             'currentUserId' => wp_get_current_user()->ID,
             'current_user_name' => wp_get_current_user()->data->user_login,
+            'current_post' => get_the_ID()
 
         )
     );
@@ -137,11 +138,6 @@ add_action('after_setup_theme', 'myThemeSetUp');
 
 add_action('wp_enqueue_scripts', 'add_responsive_slider_assets');
 
-
-// کلیه فایلهای مربوط به ایجکس اینجاست
-include_once get_template_directory() . '/inc/ajax.php';
-
-include_once get_template_directory() . '/inc/custom-post-type.php';
 
 
 //view functions
@@ -169,7 +165,8 @@ function testTheme_set_like_post_meta($id)
 {
     if (intval($id)) {
         $current_like_post = testTheme_get_like_post_meta($id);
-        update_post_meta($id, 'like', $current_like_post + 1);
+       $final =  update_post_meta($id, 'like', $current_like_post + 1);
+       return $final;
     }
 }
 
@@ -184,6 +181,11 @@ function testTheme_get_like_post_meta($id)
 
 
 
+
+// کلیه فایلهای مربوط به ایجکس اینجاست
+include_once get_template_directory() . '/inc/ajax.php';
+
+include_once get_template_directory() . '/inc/custom-post-type.php';
 
 
 

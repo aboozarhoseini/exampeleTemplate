@@ -47,16 +47,16 @@ jQuery(document).ready(function ($) {
     // ajax for like
 
 
-    $("article").on('click', function (e) {
+    $("article .a-like-it").on('click', function (e) {
         e.preventDefault();
         $this = $(this);
-        $this_like = $(this).find('.a-like-it');
+        $this_like = $(this);
         $this_i = $(this).find('i');
-        $pLike = $(this).find('.p-like');
+        $pLike = $("article").find('.p-like');
 
-        $this_like.css('backgroundColor','lightBlue');
-        $this_i.css('backgroundColor','pink');
-        $pLike.css('backgroundColor','yellow');
+        // $this_like.css('backgroundColor','lightBlue');
+        // $this_i.css('backgroundColor','pink');
+        // $pLike.css('backgroundColor','yellow');
 
         $.ajax({
             url: obj_ajax.ajaxUrl,
@@ -67,7 +67,8 @@ jQuery(document).ready(function ($) {
             success: function (res) {
                 // $pLike = $(this).find('.p-like');
                 $currentLike = $pLike.html();
-                $pLike.html(Number($currentLike) + Number(res) );
+                // $pLike.html(Number($currentLike) + Number(res) );
+                $pLike.html(res);
 
             }
 
