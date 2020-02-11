@@ -1,12 +1,12 @@
 <div class="colorlib-blog">
-    <div class="container">
+    <div class="container ">
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-center colorlib-heading animate-box">
                 <h2>News from our Blog</h2>
                 <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
             </div>
         </div>
-        <div class="row">
+        <div class="row " >
             <!--use get_template_directory()-->
             <!-------------------------------->
             <!--            --><?php //include_once get_template_directory() . '/loop/loop.php' ?>
@@ -14,16 +14,26 @@
 
             <!--use get_template_part()-->
             <!-------------------------------->
-            <?php get_template_part('loop/loop'); ?>
+            <?php
 
+            get_template_part('loop/loop');
 
-
+            ?>
 
 
             <!--use get_template_part()-->
             <!-------------------------------->
-<!--            --><?php //get_template_part('loop/test','loop'); ?>
+            <!--            --><?php //get_template_part('loop/test','loop'); ?>
             <!--            --><?php //include_once get_template_directory() . '/loop/test-loop.php' ?>
+        </div>
+        <div class="moreSection">
+            <div class="moreDiv">
+                <a data-page="1" href="#">مطالب بیشتر</a>
+            </div>
+        </div>
+        <div class="divImage">
+
+            <img src="<?php echo get_template_directory_uri().'/images/loader.gif'?>" alt="">
         </div>
     </div>
 </div>

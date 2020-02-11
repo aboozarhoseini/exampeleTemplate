@@ -11,5 +11,5 @@ get_header();
 get_template_part('partials/blog');
 //get_template_part('partials/subscribe');
 //get_template_part('partials/pricing');
-get_template_part('partials/footer_content');
+//get_template_part('partials/footer_content');
 get_footer();

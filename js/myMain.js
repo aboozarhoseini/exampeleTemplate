@@ -43,16 +43,13 @@ jQuery(document).ready(function ($) {
 
     })
 
-
     // ajax for like
-
-
-    $("article .a-like-it").on('click', function (e) {
+    $("article").on('click', function (e) {
         e.preventDefault();
         $this = $(this);
-        $this_like = $(this);
+        $this_like = $this.find('.a-like-it');
         $this_i = $(this).find('i');
-        $pLike = $("article").find('.p-like');
+        $pLike = $this.find('.p-like');
 
         // $this_like.css('backgroundColor','lightBlue');
         // $this_i.css('backgroundColor','pink');
@@ -73,6 +70,49 @@ jQuery(document).ready(function ($) {
             }
 
 
+        })
+    })
+
+    // ajax for more post
+
+    $('.moreDiv').click(function (e) {
+        e.preventDefault();
+        var $this = $(this).find('a');
+
+        $this.text('در حال بارگذاری . . .');
+
+        ($('.divImage').show());
+
+        var $page = parseInt($this.data('page'));
+
+
+        // hide div with mainPosts class
+        // این div ها در فایل loop موجود است و برای حذف آنها و نمایش از ابتدا این کار انجام شده است
+        $('.mainPosts').hide();
+
+        $.ajax({
+            url: obj_ajax.ajaxUrl,
+            type: 'post',
+            dataType: 'json',
+            data: {
+                action: "more_action",
+                page: $page
+            },
+            success: function (res) {
+                if (res.allpost > -1) {
+                    if (parseInt(res.count) > 0) {
+                        $('.divImage').hide();
+                        $this.parent().parent().prev().append(res.content);
+                        $this.data('page', parseInt($page + 1));
+                        $this.text('مطالب بیشتر');
+                    }
+                }else{
+                    $this.text('هیچ پستی وجود ندارد');
+                    $('.divImage').hide();
+                }
+
+
+            }
         })
     })
 });
